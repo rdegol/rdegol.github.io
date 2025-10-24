@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Are You Feeling?</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+        
+        .feeling-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            margin: 10px 0;
+            border-radius: 12px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .feeling-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .best { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; }
+        .great { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; }
+        .good { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: white; }
+        .okay { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; }
+        .neutral { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #333; }
+        .struggling { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); color: #333; }
+        .difficult { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); color: #333; }
+        .bad { background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%); color: #333; }
+        .worst { background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%); color: #333; }
+        
+        .emoji {
+            font-size: 2em;
+            margin-right: 15px;
+            min-width: 50px;
+            text-align: center;
+        }
+        
+        .number {
+            font-weight: bold;
+            margin-right: 15px;
+            min-width: 30px;
+            font-size: 1.1em;
+        }
+        
+        .text {
+            flex-grow: 1;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        
+        .description {
+            font-size: 0.85em;
+            opacity: 0.9;
+            font-weight: 400;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>How Are You Feeling? 💭</h1>
+        <p class="subtitle">From Best to Worst</p>
+        
+        <div class="feeling-item best">
+            <span class="number">1.</span>
+            <span class="emoji">🤩</span>
+            <div>
+                <span class="text">I'm ecstatic</span>
+                <div class="description">Overjoyed, thrilled beyond measure</div>
+            </div>
+        </div>
+        
+        <div class="feeling-item best">
+            <span class="number">2.</span>
+            <span class="emoji">🌟</span>
+            <div>
+                <span class="text">I'm outstanding</span>
+                <div class="description">Feeling exceptional, at your peak</div>
+            </div>
+        </div>
+        
+        <div class="feeling-item great">
+            <span class="number">3.</span>
+            <span class="emoji">☁️</span>
+            <div>
+                <span class="text">I'm on cloud nine</span>
+                <div class="description">Extremely happy and content</div>
+            </div>
+        </div>
+        
+        <div class="feeling-item great">
+            <span class="number">4.</span>
+            <span class="emoji">😎</span>
+            <div>
+                <span class="text">I'm awesome</span>
+                <div class="description">Feeling great, confident, and energized</div>
+            </div>
+        </div>
+        
+        <div class="feeling-item great">
+            <span class="number">5.</span>
+            <span class="emoji">✨</span>
+            <div>
+                <span class="text">I'm fantastic</span>
+                <div class="description">Feeling wonderful and full of energy</div>
+            </div>
+        </div>
+        
+        <div class="feeling-item good">
+            <span class="number">6.</span>
+            <span class="emoji">😊</span>
+            <div>
+                <span class="text">I'm chipper</span>
+                <div class="description">Upbeat, cheerful, and lively</div>
+            </div>
+        </div>
+        
+        <div class="feeling-item good">
+            <span class="number">7.</span>
+            <span class="emoji">😄</span>
+            <div>
+                <span class="text">I'm really good</span>
+                <div class="description">Genuinely positive and satisfied</div>
+            </div>
+        </div>
+        
+        <div class="feeling-item good">
+            <span class="number">8.</span>
+            <span class="emoji">🙂</span>
+            <div>
+                <span class="text">I'm swell</span>
+                <div class="description">Feeling pleasant and quite content</div>
+            </div>
+        </div>
+        
+        <div class="feeling-item okay">
+            <span class="number">9.</span>
+            <span class="emoji">👍</span>
+            <div>
+                <span class="text">I'm doing well</span>
+                <div class="description">Solid, comfortable, things are going smoothly</div>
+            </div>
+        </div>
+        
+        <div class="feeling-item okay">
+            <span class="number">10.</span>
+            <span class="emoji">🙃</span>
+            <div>
+                <span class="text">I'm pretty good</span>
+                <div class="description">Generally positive with minor reservations</div>
+            </div>
+        </div>
+        
+        <div class="feeling-item neutral">
+            <span class="number">11.</span>
+            <span class="emoji">😐</span>
+            <div>
+                <span class="text">I'm okay</span>
+                <div class="description">Neutral, getting by without much complaint</div>
+            </div>
+        </div>
+        
+        <div class="feeling-item neutral">
+            <span class="number">12.</span>
+            <span class="emoji">😶</span>
+            <div>
+                <span class="text">I'm alright</span>
+                <div class="description">Managing, nothing particularly good or bad</div>
+            </div>
+        </div>
+        
+        <div class="feeling-item neutral">
+            <span class="number">13.</span>
+            <span class="emoji">🤷</span>
+            <div>
+                <span class="text">I'm fine</span>
+                <div class="description">Often a polite deflection, not fully transparent</div>
+            </div>
+        </div>
+        
+        <div class="feeling-item neutral">
+            <span class="number">14.</span>
+            <span class="emoji">😑</span>
+            <div>
+                <span class="text">I'm so-so</span>
+                <div class="description">Middling, neither up nor down</div>
+            </div>
+        </div>
+        
+        <div class="feeling-item struggling">
+            <span class="number">15.</span>
+            <span class="emoji">😮‍💨</span>
+            <div>
+                <span class="text">I'm hanging in there</span>
+                <div class="description">Struggling a bit but persevering</div>
+            </div>
+        </div>
+        
+        <div class="feeling-item struggling">
+            <span class="number">16.</span>
+            <span class="emoji">😕</span>
+            <div>
+                <span class="text">I'm not great</span>
+                <div class="description">Acknowledging difficulty without full disclosure</div>
+            </div>
+        </div>
+        
+        <div class="feeling-item difficult">
+            <span class="number">17.</span>
+            <span class="emoji">😰</span>
+            <div>
+                <span class="text">I'm stressed</span>
+                <div class="description">Feeling pressure and tension</div>
+            </div>
+        </div>
+        
+        <div class="feeling-item difficult">
+            <span class="number">18.</span>
+            <span class="emoji">😞</span>
+            <div>
+                <span class="text">I'm bad</span>
+                <div class="description">Feeling off, not yourself, something's wrong</div>
+            </div>
+        </div>
+        
+        <div class="feeling-item bad">
+            <span class="number">19.</span>
+            <span class="emoji">😣</span>
+            <div>
+                <span class="text">I'm struggling</span>
+                <div class="description">Having a hard time coping</div>
+            </div>
+        </div>
+        
+        <div class="feeling-item bad">
+            <span class="number">20.</span>
+            <span class="emoji">😵</span>
+            <div>
+                <span class="text">I'm overwhelmed</span>
+                <div class="description">Feeling buried under too much</div>
+            </div>
+        </div>
+        
+        <div class="feeling-item bad">
+            <span class="number">21.</span>
+            <span class="emoji">😫</span>
+            <div>
+                <span class="text">I'm exhausted</span>
+                <div class="description">Drained physically and emotionally</div>
+            </div>
+        </div>
+        
+        <div class="feeling-item worst">
+            <span class="number">22.</span>
+            <span class="emoji">😢</span>
+            <div>
+                <span class="text">I'm really down</span>
+                <div class="description">Sad, discouraged, low mood</div>
+            </div>
+        </div>
+        
+        <div class="feeling-item worst">
+            <span class="number">23.</span>
+            <span class="emoji">😔</span>
+            <div>
+                <span class="text">I'm not okay</span>
+                <div class="description">Honest admission that things are difficult</div>
+            </div>
+        </div>
+        
+        <div class="feeling-item worst">
+            <span class="number">24.</span>
+            <span class="emoji">😖</span>
+            <div>
+                <span class="text">I'm awful</span>
+                <div class="description">Feeling terrible, deeply distressed</div>
+            </div>
+        </div>
+        
+        <div class="feeling-item worst">
+            <span class="number">25.</span>
+            <span class="emoji">💔</span>
+            <div>
+                <span class="text">I'm at rock bottom</span>
+                <div class="description">The lowest point, feeling hopeless</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
