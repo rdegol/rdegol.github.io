@@ -1,0 +1,177 @@
+:root {
+  --ice: #eef3f6;
+  --rink-blue: #0a2a43;
+  --panther-red: #c8102e;
+  --panther-navy: #041e42;
+  --panther-gold: #b9975b;
+  --steel: #6b7d8c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(1200px 500px at 50% -10%, rgba(200,16,46,0.12), transparent 60%),
+    var(--ice);
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  color: var(--panther-navy);
+  padding: 0 0 80px;
+}
+
+header {
+  padding: 64px 24px 40px;
+  text-align: center;
+  border-bottom: 4px solid var(--panther-red);
+  background: linear-gradient(180deg, var(--panther-navy) 0%, #0d2f4d 100%);
+  color: white;
+}
+
+header .eyebrow {
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: var(--panther-gold);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+header h1 {
+  margin: 0;
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.nowrap { white-space: nowrap; }
+
+header p {
+  margin: 12px 0 0;
+  color: #b9c6d4;
+  font-size: 15px;
+}
+
+.grid {
+  max-width: 960px;
+  margin: 40px auto 0;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+@media (max-width: 720px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 460px) {
+  header { padding: 32px 16px 24px; }
+  header .eyebrow { margin-bottom: 8px; }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 24px;
+    padding: 0 16px;
+  }
+}
+
+.card {
+  position: relative;
+  background: white;
+  border: 1px solid #dbe3ea;
+  border-radius: 8px;
+  padding: 14px 8px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+/* Only lift on devices with a real pointer, so taps on phones don't leave cards stuck raised. */
+@media (hover: hover) {
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(4,30,66,0.12);
+    border-color: var(--panther-red);
+  }
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.opponent {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.25;
+  min-height: 33px;
+  display: flex;
+  align-items: center;
+}
+
+.date {
+  order: -1;
+  margin: 0 0 10px;
+  font-size: 22px;
+  font-weight: 600;
+  color: white;
+  background: var(--panther-red);
+  padding: 3px 14px;
+  border-radius: 999px;
+  letter-spacing: 0.03em;
+}
+
+.time {
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--steel);
+}
+
+.result {
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.card.win {
+  background: #cdebd6;
+  border-color: #2e9e55;
+}
+.card.win .result { color: #1d6b39; }
+
+.card.loss {
+  background: #f5c6cc;
+  border-color: var(--panther-red);
+}
+.card.loss .result { color: #8a0b20; }
+.card.loss .date { background: var(--panther-navy); }
+
+.card.otl {
+  background: #fbeaa5;
+  border-color: #d4a514;
+}
+.card.otl .result { color: #7a5c00; }
+
+.card.win .time,
+.card.loss .time,
+.card.otl .time { color: var(--panther-navy); }
+
+/* Very narrow phones (iPhone SE / small Androids): shrink the date pill so it fits the card. */
+@media (max-width: 360px) {
+  .grid { gap: 8px; }
+  .card { padding: 12px 6px 10px; }
+  .date {
+    font-size: 18px;
+    padding: 2px 10px;
+  }
+}
+
+footer {
+  text-align: center;
+  margin-top: 56px;
+  color: var(--steel);
+  font-size: 12.5px;
+}
